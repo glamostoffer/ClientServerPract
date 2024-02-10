@@ -1,0 +1,205 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.cards {
+    position: absolute;
+    top: 10%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  .glassmorph_card {
+    display: flex;
+    justify-content: center;
+    margin: 60px;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+  }
+  
+  .card {
+    z-index: 3;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    padding: 2em;
+    border-radius: 1em;
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.17);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+  
+  .card img {
+    height: calc(3.5 * 88px);
+    border-radius: 12px;
+  }
+  
+  .card:hover img {
+    filter: blur(2px);
+    transition: 1s;
+  }
+  
+  .card a {
+    position: absolute;
+    opacity: 0;
+    padding: 4px;
+    border-radius: 6px;
+    top: 50%;
+    left: 42%;
+    text-decoration: none;
+    color: #eee;
+    background: #43157c;
+  }
+  
+  .card:hover a {
+    opacity: 100;
+    transition: 1.2s;
+    transform: translateY(15px);
+  }
+  
+  .block1 {
+    z-index: 2;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right:  12%;
+    top: 4%;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.17);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    transition-property: all;
+    transition: all ease 2s;
+  }
+  
+  .block2 {
+    z-index: 2;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left:  12%;
+    bottom: -4%;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.17);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    transition-property: all;
+    transition: all ease 2s;
+  }
+  
+  .background_gradient {
+    position: absolute;
+    width: 140px;
+    height: 450px;
+    left: 73px;
+    border-radius: 4px;
+    transform: skew(23deg);
+    transition-property: all;
+    transition: all ease 2s;
+  }
+  
+  .glassmorph_card:hover .background_gradient{
+    /*animation: animate 1.9s ease-in-out forwards;*/
+    transform: skew(0deg);
+  }
+  
+  .glassmorph_card:hover .block1 {
+    transform: translateY(-80%);
+  }
+  
+  .glassmorph_card:hover .block2 {
+    transform: translateY(80%);
+  }
+  
+  .background_gradient::before {
+    position: absolute;
+    content: '';
+    top: -2px;
+    left: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% + 4px);
+    border-radius: 5px;
+    z-index: -1;
+    opacity: 1;
+    filter: blur(5px);
+    background-size: 400%;
+  }
+  
+  /*Individual colors*/
+  #dragon {
+    background: linear-gradient(rgb(232, 17, 49), rgb(245, 121, 16));
+  }
+  #dragon::before {
+    background: linear-gradient(45deg, #f57910, #e81131);
+  }
+  #dragon_a {
+    color: #eee;
+    background: #d2165c;
+  }
+  #shadow {
+    background: linear-gradient(rgb(222, 25, 107), rgb(23, 171, 215));
+  }
+  #shadow::before {
+    background: linear-gradient(45deg, #17abd7, #de196b);
+  }
+  #shadow_a {
+    color: #e7e7e7;
+    background: #1faace;
+  }
+  #junji {
+    background: linear-gradient(rgb(27, 31, 126), rgb(217, 30, 216));
+  }
+  #junji::before {
+    background: linear-gradient(45deg, #d91ed8, #1b1f7e);
+  }
+  #junji_a {
+    color: #e7e7e7;
+    background: #131769;
+  }
+  #leaf {
+    background: linear-gradient(rgb(20, 199, 55), rgb(211, 62, 199));
+  }
+  #leaf::before {
+    background: linear-gradient(45deg, #d33ec7, #14c737);
+  }
+  #leaf_a {
+    color: #e7e7e7;
+    background: #0d8c26;
+  }
+  #kitsune {
+    background: linear-gradient(rgb(236, 221, 154), rgb(171, 16, 87));
+  }
+  #kitsune::before {
+    background: linear-gradient(45deg, #ab1057, #ecdd9a);
+  }
+  #kitsune_a {
+    color: #e7e7e7;
+    background: #940d4e;
+  }
+  #hacker {
+    background: linear-gradient(rgb(126, 170, 211), rgb(33, 70, 178));
+  }
+  #hacker::before {
+    background: linear-gradient(45deg, #2146b2, #7eaad3);
+  }
+  #hacker_a {
+    color: #e7e7e7;
+    background: #1945bb;
+  }
+  /*Вопросик, как сделать так же через keyframe*/
+  @keyframes animate {
+    from {
+      transform: skew(23deg);
+    }
+    to {
+      transform: skew(0deg);
+    }
+  }
